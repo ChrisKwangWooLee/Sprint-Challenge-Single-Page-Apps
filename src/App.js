@@ -10,6 +10,7 @@ import CharacterList from './components/CharacterList';
 import WelcomePage from './components/WelcomePage';
 import CharacterCard from './components/CharacterCard';
 import SearchForm from './components/SearchForm';
+import LocationsList from './components/LocationsList';
 
 export default function App() {
   // TODO: Add useState to track data from useEffect
@@ -41,11 +42,18 @@ export default function App() {
         <NavLink style={{border: "1px solid black",
                          width: "30%",
                          textAlign: "center",
-                         color: "black"}}to="/">Home</NavLink>
+                         color: "black"}}
+                         to="/">Home</NavLink>
         <NavLink style={{border: "1px solid black",
                          width: "40%",
                          textAlign: "center",
-                         color: "black"}} to="/characters">Characters</NavLink>
+                         color: "black"}} 
+                         to="/characters">Characters</NavLink>
+        <NavLink style={{border: "1px solid black",
+                         width: "40%",
+                         textAlign: "center",
+                         color: "black"}} 
+                         to="/locations">Locations</NavLink>
       </MyNav>
 
       <Switch>
@@ -57,6 +65,9 @@ export default function App() {
         </Route>
         <Route path="/characters/:id">
           <CharacterCard RMdata={RMdata}/>
+        </Route>
+        <Route path="/locations">
+          <LocationsList />
         </Route>
       </Switch>
     </main>
