@@ -1,16 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import {Link} from "react-router-dom";
+import SearchForm from './SearchForm';
 
-export default function CharacterList() {
-  // TODO: Add useState to track data from useEffect
-
-  useEffect(() => {
-    // TODO: Add API Request here - must run in `useEffect`
-    //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
-  }, []);
-
+export default function CharacterList(props) {
+  const {RMdata} = props;
+  
   return (
     <section className="character-list">
-      <h2>TODO: `array.map()` over your state here!</h2>
+      <SearchForm RMdata={RMdata} />
     </section>
   );
 }
